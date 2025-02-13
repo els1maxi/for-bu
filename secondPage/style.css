@@ -1,0 +1,323 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Исправлено */
+}
+
+body {
+    background-color: #eccede;
+}
+
+.content {
+    max-width: 900px;
+    margin: auto;
+    margin-top: 60px;
+    height: auto; /* Делаем адаптивным */
+}
+
+
+.img-container img {
+    display: block;
+    max-width: 100%;
+    height: 300px;
+    border-radius: 10px; 
+    
+}
+
+
+.box-container {
+    background-color: #ecddf0;
+    display: flex;
+    margin: 50px;
+    align-items: flex-start; /* Выравниваем элементы по верхнему краю */
+    height: auto;
+    border-radius: 30px;
+    padding: 40px;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.3); /* Небольшая тень */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.box-container:hover {
+    transform: scale(1.05); /* Увеличение при наведении */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5); /* Увеличенная тень при наведении */
+}
+
+
+.text-conatiner {
+    display: flex;
+    flex-direction: column;
+    padding-left: 30px;
+    gap: 10px;
+    justify-content: flex-start; /* Выравниваем текст сверху */
+    width: 480px; 
+}
+
+.text-conatiner h2,
+.text-conatiner p {
+    margin: 0; /* Убираем стандартные отступы */
+}
+
+
+.ubuntu-regular {
+    font-family: "Ubuntu", serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 22px;
+  }
+  
+  .ubuntu-medium {
+    font-family: "Ubuntu", serif;
+    font-weight: 500;
+    font-style: normal;
+  }
+  
+  .ubuntu-bold {
+    font-family: "Ubuntu", serif;
+    font-weight: 700;
+    font-style: normal;
+    font-size: 35px;
+  }
+
+
+  .fa-heart{
+    color: red;
+  }
+
+  audio {
+    width: 100%; /* Ширина проигрывателя */
+    margin: 20px 0; /* Отступы */
+    background-color: #f1f1f1; /* Цвет фона */
+    border-radius: 10px; /* Закругленные углы */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Тень */
+}
+
+.center{
+    text-align: center;
+    margin-top: 60px;
+}
+
+.margin-button{
+    margin-bottom: 20px;
+}
+
+
+.watermark {
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    font-size: 14px;
+    color: rgba(177, 169, 169, 0.5); /* Белый цвет с прозрачностью */
+    font-family: Arial, sans-serif;
+    pointer-events: none; /* Чтобы текст не мешал кликам */
+    user-select: none; /* Запрещает выделение текста */
+}
+
+
+
+
+@media (max-width: 426px) {
+    .box-container {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .text-conatiner {
+        padding: 0;
+    }
+}
+
+
+
+/* ===========================JS============================= */
+
+
+#hearts-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: -1; /* Чтобы сердечки были под контентом */
+}
+
+
+
+.heart {
+    position: absolute;
+    font-size: 32px;
+    color: #E75480; /* Цвет сердечка */
+    animation: floatUp 5s linear forwards; /* Анимация подъёма */
+    opacity: 0; /* Начальная прозрачность */
+}
+
+@keyframes floatUp {
+    0% {
+        transform: translateY(100vh) translateX(-50%); /* Начальная позиция (снизу за пределами экрана) */
+        opacity: 1; /* Появляются */
+    }
+    100% {
+        transform: translateY(-20vh) translateX(-50%); /* Конечная позиция (выше верхней границы) */
+        opacity: 0; /* Исчезают */
+    }
+}
+
+
+
+
+
+/* ================================MUSIC=========================================== */
+/* Контейнер плеера */
+.audio-player {
+    display: flex;
+    align-items: center;
+    background-color: #F4C2C2;
+    padding: 10px;
+    border-radius: 20px;
+    width: 250px;
+    justify-content: space-between;
+}
+
+/* Кнопка воспроизведения/паузы */
+.play-btn {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: white;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0.3s;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.play-btn:hover {
+    background-color: #ffaaaa;
+}
+
+/* Ползунок громкости */
+.volume-slider {
+    width: 100px;
+    -webkit-appearance: none;
+    appearance: none;
+    height: 5px;
+    background: white;
+    border-radius: 5px;
+    outline: none;
+    cursor: pointer;
+}
+
+.volume-slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 12px;
+    height: 12px;
+    background: #ff6666;
+    border-radius: 50%;
+    cursor: pointer;
+}
+button:hover {
+    background-color: palevioletred; /* Изменяем цвет при наведении */
+    transform: scale(1.13); /* Увеличиваем кнопку */
+    box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.3);
+}
+
+
+
+
+  .ubuntu-regular {
+    font-family: "Ubuntu", serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+  
+  .ubuntu-medium {
+    font-family: "Ubuntu", serif;
+    font-weight: 500;
+    font-style: normal;
+  }
+  
+  .ubuntu-bold {
+    font-family: "Ubuntu", serif;
+    font-weight: 700;
+    font-style: normal;
+    font-size: 40px;
+  }
+  
+/*==========================FOR PHONE============================= */
+
+@media screen and (max-width: 768px) {
+    .content {
+        padding: 20px;
+        text-align: center;
+    }
+
+    .ubuntu-bold {
+        font-size: 28px; /* Уменьшаем заголовок */
+    }
+
+    .action-buttons {
+        flex-direction: column; /* Кнопки одна под другой */
+        gap: 20px; /* Отступ между кнопками */
+    }
+
+    button {
+        width: 180px;
+        height: 50px;
+        font-size: 18px;
+    }
+
+    .heart {
+        font-size: 18px; /* Уменьшаем размер сердечек */
+    }
+
+    a {
+        text-decoration: none; /* Убираем подчёркивание */
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .ubuntu-bold {
+        font-size: 24px;
+    }
+
+    button {
+        width: 160px;
+        height: 45px;
+        font-size: 16px;
+    }
+
+    .heart {
+        font-size: 16px;
+    }
+
+    a {
+        text-decoration: none; /* Убираем подчёркивание */
+    }
+}
+
+button:active {
+    transform: scale(1.1);
+    box-shadow: 6px 6px 10px rgba(0, 0, 0, 0.3);
+}
+button{
+    background-color: #b58098;
+    height: 60px;
+    width: 220px;
+    border-radius: 30px;
+    border-style: none;
+    font-size: 20px;
+    transition: all 0.4s ease;
+    box-shadow: 8px 8px 10px rgba(0, 0, 0, 0.2); 
+    
+    
+}
+
+
+.ubuntu-regular {
+    margin-left: 650px;
+}

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forever</title>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="icon" href="./favicon-16x16.png" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+
+    <section class="content">
+        <div class="times-together">
+            <h1 class="ubuntu-bold">Наши часики </h1>
+            <h3 class="ubuntu-regular">Хочешь узнать сколько мы вместе?</h3>
+            <div class="buttons">
+                <button type="button" class="action-button ubuntu-medium" id="sure-button">Конечно</button>
+                <button type="button" class="action-button ubuntu-medium" id="maybe-later">Позже</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Новый контейнер для отображения времени -->
+    <section class="content-2" id="time-container">
+        <div class="times-together">
+            <h1 class="ubuntu-regular">Время проведенное вместе</h1>
+            <div class="time-style">
+                <div id="time-display">
+                    <p class="ubuntu-regular"><span id="years">0</span> Years</p>
+                    <p class="ubuntu-regular"><span id="months">0</span> Months</p>
+                    <p class="ubuntu-regular"><span id="days">0</span> Days</p>
+                    <p class="ubuntu-regular"><span id="hours">0</span> Hours</p>
+                    <p class="ubuntu-regular"><span id="minutes">0</span> Minutes</p>
+                    <p class="ubuntu-regular"><span id="seconds">0</span> Seconds</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Новый контейнер для финального сообщения -->
+    <section class="content-3" id="final-container">
+        <div class="times-together">
+            <h1 class="ubuntu-bold">форевер?)</h1>
+            <div class="buttons">
+                <button type="button" class="action-button ubuntu-medium" id="replay-button">ес</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Бокс, который появится после нажатия кнопки -->
+    <div class="wait-box" id="wait-box">
+        <p>буду ждать)</p>
+    </div>
+    <!-- Кнопка "Click for forever" -->
+    <button id="forever-button" class="action-button ubuntu-medium" style="display: none;">Click for forever</button>
+
+    <div id="hearts-container"></div>
+
+    <div class="watermark">Made with love from Li to Ni (14.02.2025)</div>
+
+    <script src="./app.js"></script>
+</body>
+
+</html>

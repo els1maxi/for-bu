@@ -1,0 +1,299 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #eccede;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    overflow: hidden;
+}
+
+.content {
+    width: 500px;
+    max-width: 900px;
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.times-together {
+    background-color: #ecddf0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    border-radius: 30px;
+    padding: 40px;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.3);
+    gap: 25px;
+}
+
+.buttons {
+    display: flex;
+    justify-content: space-between;
+    width: 220px;
+}
+
+.action-button {
+    height: 40px;
+    width: 90px;
+    border-style: none;
+    background-color: #f6847a;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.action-button:hover {
+    background-color: #e57368;
+    transform: translateY(-5px); /* Приподнимаем кнопку на 5px */
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2); 
+}
+
+/* Стили для бокса "I'll Wait!" */
+.wait-box {
+    display: none; /* Скрыт по умолчанию */
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #FADFAD;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 6px 6px 0px #f6847a; /* Тень справа и снизу */
+    text-align: center;
+    z-index: 1000;
+}
+
+.wait-box p {
+    margin: 0;
+    font-size: 18px;
+    color: #333;
+}
+
+
+
+/* ======================sure-button======================== */
+
+/* Стили для нового контейнера с временем */
+#time-container {
+    display: none; /* Скрыт по умолчанию */
+}
+
+#time-display {
+    text-align: center;
+    font-size: 20px;
+    color: #333;
+}
+
+#time-display p {
+    margin: 10px 0;
+}
+
+.time-style{
+    background-color: #f6847a;
+    width: 280px;
+    border-radius: 20px;
+}
+
+
+.content-2{
+    width: 500px;
+    max-width: 900px;
+    height: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+
+
+/* Стили для текстовых сообщений */
+.message-box {
+    position: fixed;
+    background-color: #FADFAD;
+    padding: 15px 25px;
+    border-radius: 10px;
+    box-shadow: 6px 6px 0px #f6847a;
+    text-align: center;
+    font-size: 18px;
+    color: #333;
+    opacity: 0; /* Начальная прозрачность */
+    animation: fadeInOut 3s ease-in-out; /* Анимация появления и исчезновения */
+    font-family: "Ubuntu", serif;
+}
+
+@keyframes fadeInOut {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    20% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    80% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    100% {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+}
+
+
+/* Стили для кнопки "Click for forever" */
+#forever-button {
+    position: fixed;
+    bottom: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #f6847a;
+    color: white;
+    font-size: 18px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    width: 200px;
+}
+
+#forever-button:hover {
+    background-color: #e57368;
+    transform: translateY(-5px) translateX(-50%);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* ========================================================= */
+
+
+/* ========================reply-page=========================== */
+/* Стили для финального контейнера */
+#final-container {
+    display: none; /* Скрыт по умолчанию */
+    width: 500px;
+    max-width: 900px;
+    height: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#final-container {
+    display: none;
+}
+
+#final-container .buttons {
+    display: flex;
+    justify-content: center; /* Центрируем кнопку */
+    width: 100%; /* Делаем ширину на весь контейнер */
+}
+
+
+#final-container .times-together {
+    background-color: #FADFAD;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 350px;
+    height: 220px;
+    border-radius: 30px;
+    padding: 40px;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.3);
+    gap: 25px;
+}
+
+/* ======================================================================= */
+
+
+
+/* ==========================background-hearts=========================== */
+
+
+#hearts-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: -1; /* Чтобы сердечки были под контентом */
+}
+
+
+
+.heart {
+    position: absolute;
+    font-size: 32px;
+    color: #E75480; /* Цвет сердечка */
+    animation: floatUp 5s linear forwards; /* Анимация подъёма */
+    opacity: 0; /* Начальная прозрачность */
+}
+
+@keyframes floatUp {
+    0% {
+        transform: translateY(100vh) translateX(-50%); /* Начальная позиция (снизу за пределами экрана) */
+        opacity: 1; /* Появляются */
+    }
+    100% {
+        transform: translateY(-20vh) translateX(-50%); /* Конечная позиция (выше верхней границы) */
+        opacity: 0; /* Исчезают */
+    }
+}
+
+
+/* ========================================================================= */
+
+
+
+
+
+
+
+
+
+.ubuntu-regular {
+    font-family: "Ubuntu", serif;
+    font-weight: 600;
+    font-style: normal;
+    font-size: 20px;
+  }
+  
+  .ubuntu-medium {
+    font-family: "Ubuntu", serif;
+    font-weight: 500;
+    font-style: normal;
+    font-size: 16px;
+  }
+  
+  .ubuntu-bold {
+    font-family: "Ubuntu", serif;
+    font-weight: 700;
+    font-style: normal;
+    font-size: 40px;
+  }
+
+
+  .watermark {
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    font-size: 14px;
+    color: rgba(177, 169, 169, 0.5); /* Белый цвет с прозрачностью */
+    font-family: Arial, sans-serif;
+    pointer-events: none; /* Чтобы текст не мешал кликам */
+    user-select: none; /* Запрещает выделение текста */
+}

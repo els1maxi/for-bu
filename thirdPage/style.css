@@ -1,0 +1,113 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: 0;
+}
+
+body{
+    background-color: #F4C2C2;
+}
+
+.content{
+    width: 800px;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 38px;
+}
+
+
+li{
+    margin-bottom: 18px;
+    padding: 8px;
+    background-color: #FADFAD;
+    list-style-type: none;
+    border-radius: 20px;
+    padding-left: 15px;
+    padding-right: 15px;
+    transition: all 0.4s ease;
+    font-family: "Ubuntu", serif;
+    font-weight: 500;
+    font-style: normal;
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2);
+    height: 30px;
+    display: flex;
+    align-items: center;
+}
+
+
+li:hover {
+    background-color: palevioletred; /* Изменяем цвет при наведении */
+    transform: scale(1.1); /* Увеличиваем кнопку */
+    box-shadow: 6px 6px 15px rgba(0, 0, 0, 0.3);
+}
+
+.ubuntu-bold {
+    font-family: "Ubuntu", serif;
+    font-weight: 700;
+    font-style: normal;
+    font-size: 40px;
+    padding-top: 22px;
+  }
+
+  
+.fa-heart{
+    color: red;
+}
+
+
+.no-link-style {
+    text-decoration: none; /* Убираем подчеркивание */
+    color: inherit; /* Наследуем цвет текста от родительского элемента */
+    cursor: default; /* Оставляем курсор в виде указателя */
+}
+
+
+.watermark {
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    font-size: 14px;
+    color: rgba(177, 169, 169, 0.5); /* Белый цвет с прозрачностью */
+    font-family: Arial, sans-serif;
+    pointer-events: none; /* Чтобы текст не мешал кликам */
+    user-select: none; /* Запрещает выделение текста */
+}
+
+
+
+
+
+
+#hearts-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: -1; /* Чтобы сердечки были под контентом */
+}
+
+
+
+.heart {
+    position: absolute;
+    font-size: 32px;
+    color: #E75480; /* Цвет сердечка */
+    animation: floatUp 5s linear forwards; /* Анимация подъёма */
+    opacity: 0; /* Начальная прозрачность */
+}
+
+@keyframes floatUp {
+    0% {
+        transform: translateY(100vh) translateX(-50%); /* Начальная позиция (снизу за пределами экрана) */
+        opacity: 1; /* Появляются */
+    }
+    100% {
+        transform: translateY(-20vh) translateX(-50%); /* Конечная позиция (выше верхней границы) */
+        opacity: 0; /* Исчезают */
+    }
+}
+
